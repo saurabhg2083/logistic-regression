@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Content here -->
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Welcome To ML Practical 02-Logistic Regression</h1>
+                <h2>Learn And Get Jobs</h2>
+            </div>
+        </div>
+        <br />
+
+
+        <div class="row">
+            <div class="col-sm-6">
+                <form action="{{url_for('predict_datapoint')}}" method="POST">
+
+                    <div class="form-group row">
+                        <label for="occupation" class="col-sm-5 col-form-label">Occupation:</label>
+                        <div class="col-sm-7">
+                            <select id="occupation" class="form-control" name="occupation">
+                                <option value="2">Fair</option>
+                                <option value="3">Good</option>
+                                <option value="4">Very Good</option>
+                                <option value="5">Premium</option>
+                                <option value="6">Ideal</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="occupation_husb" class="col-sm-5 col-form-label">Husband's Occupation:</label>
+                        <div class="col-sm-7">
+                            <select id="occupation_husb" class="form-control" name="occupation_husb">
+                                <option value="2">Fair</option>
+                                <option value="3">Good</option>
+                                <option value="4">Very Good</option>
+                                <option value="5">Premium</option>
+                                <option value="6">Ideal</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="rate_marriage" class="col-sm-5 col-form-label">Marriage Rating :</label>
+                        <div class="col-sm-7">
+                            <select id="rate_marriage" class="form-control" name="rate_marriage">
+                                <option value="1">Not Good</option>
+                                <option value="2">Fair</option>
+                                <option value="3">Good</option>
+                                <option value="4">Very Good</option>
+                                <option value="5">Best</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="age" class="col-sm-5 col-form-label">Age:</label>
+                        <div class="col-sm-7">
+                            <input type="text" id="age" required name="age" class="form-control"
+                                placeholder="Enter age value (float)" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="yrs_married" class="col-sm-5 col-form-label">Years of Marriage:</label>
+                        <div class="col-sm-7">
+                            <input type="text" required id="yrs_married" class="form-control" name="yrs_married"
+                                placeholder="Enter Years of Marriage value (float)" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="children" class="col-sm-5 col-form-label">How Many Children :</label>
+                        <div class="col-sm-7">
+                            <select id="children" class="form-control" name="children">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="religious" class="col-sm-5 col-form-label">Religious:</label>
+                        <div class="col-sm-7">
+                            <select id="religious" class="form-control" name="religious">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="educ" class="col-sm-5 col-form-label">Education Level:</label>
+                        <div class="col-sm-7">
+                            <select id="educ" class="form-control" name="educ">
+                                <option value="1">1</option>
+                                <option value="9">9</option>
+                                <option value="12">12</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="20">20</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <div class="col-sm-7 offset-md-5">
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
